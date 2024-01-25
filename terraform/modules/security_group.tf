@@ -26,7 +26,7 @@ module "security_group" {
       from_port   = 4141
       to_port     = 4141
       protocol    = "tcp"
-      description = "atlantis port"
+      description = "atlantis event port"
       cidr_blocks = var.man_office
     },
     {
@@ -34,6 +34,13 @@ module "security_group" {
       to_port     = 22
       protocol    = "tcp"
       description = "ssh port"
+      cidr_blocks = var.man_office
+    },
+    {
+      from_port   = 4000
+      to_port     = 4000
+      protocol    = "tcp"
+      description = "atlantis port"
       cidr_blocks = var.man_office
     }
   ]
