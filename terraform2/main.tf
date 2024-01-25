@@ -155,7 +155,6 @@ resource "aws_instance" "bitbucket_ec2_instance" {
   associate_public_ip_address = true 
   vpc_security_group_ids = [aws_security_group.my_ec2_sg.id]
   key_name = aws_key_pair.bit_to_ec2_key.key_name
-  user_data = "${file("user_data_ec2.tpl")}"
 }
 
 resource "aws_instance" "ec2_monitor" {
@@ -163,7 +162,6 @@ resource "aws_instance" "ec2_monitor" {
   instance_type = var.instance_type      # Choose an appropriate instance type
   subnet_id     = aws_subnet.pipeline_private_subnet[0].id  # Use one of the private subnets
   vpc_security_group_ids = [ aws_security_group.my_ec2_sg.id ]
-  user_data = "${file("user_data_monitor.tpl")}"
 }
 
 resource "aws_key_pair" "bit_to_ec2_key" {
