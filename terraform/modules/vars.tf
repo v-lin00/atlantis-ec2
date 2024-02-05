@@ -16,7 +16,7 @@ variable "man_office" {
 variable "project" {
     description = "Name of the project"
     type        = string
-    default     = "alantis-ec2-edit"
+    default     = "alantis-ec2-edit2"
 }
 
 ################################################################################
