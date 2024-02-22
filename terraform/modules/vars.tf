@@ -31,8 +31,12 @@ variable "ami" {
 
 variable "instance_type" {
   description = "Size of EC2"
-  type        = string
-  default     = "t3.micro"
+  type        = map(string)
+  default     = {
+    default   = "t3.micro"
+    dev       = "t3.micro"
+    prod      = "t3.small" 
+  }
 }
 
 variable "ec2_atlantis_ssm_role" {

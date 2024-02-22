@@ -5,7 +5,7 @@ module "ec2_complete" {
   source = "github.com/terraform-aws-modules/terraform-aws-ec2-instance/"
 
   ami                         = var.ami
-  instance_type               = var.instance_type
+  instance_type               = var.instance_type[terraform.workspace]
   availability_zone           = element(module.vpc.azs, 0)
   subnet_id                   = element(module.vpc.public_subnets, 0)
   vpc_security_group_ids      = [module.security_group.security_group_id]
