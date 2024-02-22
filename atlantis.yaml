@@ -1,0 +1,18 @@
+version: 3
+automerge: true
+abort_on_execution_order_fail: true
+projects:
+- name: atlantis-dev
+  branch: /main/
+  dir: terraform
+  workspace: dev
+  terraform_version: v1.6.1
+  delete_source_branch_on_merge: true
+  apply_requirements: [approved]
+- name: atlatntis-prod
+  branch: /main/
+  dir: terraform
+  workspace: prod
+  terraform_version: v1.6.1
+  delete_source_branch_on_merge: true
+  apply_requirements: [approved]
