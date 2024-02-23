@@ -1,7 +1,7 @@
 version: 3
 automerge: true
 abort_on_execution_order_fail: true
-discover_projects_with_missing_config: true
+autodiscover: true
 projects:
 - name: atlantis-dev
   branch: /demotest/
