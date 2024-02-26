@@ -6,14 +6,14 @@ autodiscover:
 projects:
 - name: atlantis-dev
   branch: /main/
-  dir: terraform
+  dir: ./terraform
   workspace: dev
   terraform_version: v1.6.1
   autoplan:
     enabled: false
 - name: atlatntis-prod
   branch: /main/
-  dir: terraform
+  dir: ./terraform
   workspace: prod
   terraform_version: v1.6.1
   autoplan:
