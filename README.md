@@ -8,8 +8,10 @@ Follow the step-by-step below to complete this Lab, hope you enjoy and learn som
 ## Creating the infrastructure
 In this section we will be creating the infrastructure that is necessary for Atlantis 
 
-'''
-terraform init
-terraform plan
-terraform apply
-'''
+```
+sudo docker build -t atlantis .
+
+sudo docker run -itd -p 4000:4141 --name atlantis atlantis server --automerge --autoplan-modules --gitlab-user=root --gitlab-token=[YOUR_GITLAB_TOKEN] --repo-allowlist=[YOUR_REPO_URL] --gitlab-webhook-secret=[YOUR_WEBHOOK_SECRET] --gitlab-hostname=http://[GITLAB_IP] 
+
+
+```
