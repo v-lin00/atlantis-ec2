@@ -13,35 +13,35 @@ module "security_group" {
       to_port     = 80
       protocol    = "tcp"
       description = "http port"
-      cidr_blocks = var.man_office
+      cidr_blocks = var.whitelisted_ip
     },
     {
       from_port   = 443
       to_port     = 443
       protocol    = "tcp"
       description = "https port"
-      cidr_blocks = var.man_office
+      cidr_blocks = var.whitelisted_ip
     },
     {
       from_port   = 4141
       to_port     = 4141
       protocol    = "tcp"
       description = "atlantis event port"
-      cidr_blocks = var.man_office
+      cidr_blocks = var.whitelisted_ip
     },
     {
       from_port   = 22
       to_port     = 22
       protocol    = "tcp"
       description = "ssh port"
-      cidr_blocks = var.man_office
+      cidr_blocks = var.whitelisted_ip
     },
     {
       from_port   = 4000
       to_port     = 4000
       protocol    = "tcp"
       description = "atlantis port"
-      cidr_blocks = var.man_office
+      cidr_blocks = var.whitelisted_ip
     }
   ]
   egress_rules        = ["all-all"]

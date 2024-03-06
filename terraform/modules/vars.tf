@@ -7,8 +7,8 @@ variable "cidr_block" {
   default     = "10.0.0.0/24"
 }
 
-variable "man_office" {
-  description = "CIDR Block"
+variable "whitelisted_ip" {
+  description = "IP whitelisted"
   type        = string
   default     = "0.0.0.0/0"
 }
@@ -33,14 +33,14 @@ variable "instance_type" {
   description = "Size of EC2"
   type        = map(string)
   default     = {
-    default   = "t3.micro"
-    dev       = "t3.micro"
-    prod      = "t3.small" 
+    default   = "t3.large"
+    dev       = "t3.medium"
+    prod      = "t3.large" 
   }
 }
 
 variable "ec2_atlantis_ssm_role" {
-  description = "Role used for Jenkins EC2, SSM"
+  description = "Role used for Atlantis EC2, SSM"
   type = string
   default = "atlantis-ssm-role"
 }
@@ -54,7 +54,7 @@ variable "ec2_atlantis_ssm_role_description" {
 variable "amazonssm_role" {
   description = "Role ARN for Amazon SSM Automation Role"
   type = string
-  default = "arn:aws:iam::aws:policy/service-role/AmazonSSMAutomationRole"
+  default = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
 }
 
 variable "tag_ec2" {
