@@ -83,19 +83,24 @@ Once Atlantis service is started, you can access it by going to your EC2 IP on p
 ![Atlantis homepage](/image/3_atlantis.png)
 
 Next we need to provide Atlantis the access to AWS by providing the AWS User Access key and Secret Access Key. A IAM user is provided with minimum required permissions for Atlantis to work here.
-```
-We first exec into the atlantis:
-sudo docker exec -it atlantis /bin/sh
 
-Then with the Vim editor we update the credentials within .aws folder:
+We first exec into the atlantis
+```
+sudo docker exec -it atlantis /bin/sh
+```
+
+Then with the Vim editor we update the credentials within .aws folder
+```
 vi /home/atlantis/.aws/credentials
+```
 
 Press I within the Vim editor to go into input mode and paste in the block below:
+```
 [default]
 aws_access_key_id = "AKIA2UT47QJP5U7MGRM4"
 aws_secret_access_key = "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"
+```
 
 Once that is done, we press ESC to exit the input mode and press :wq to save the changes (w for write and q for quit)
 
-```
 ![Adding AWS Creds for Atlantis](/image/4_atlantis.png)
