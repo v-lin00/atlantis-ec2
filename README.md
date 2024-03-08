@@ -121,3 +121,37 @@ From atlantis homepage, you can see all the previous plans/apply with an screens
 
 Once the plan is done and without error, the output will be commented within the pull request/merge request
 ![Output of Atlantis plan](/image/9_atlantis.png)
+
+## Working with multiple terraform workspaces
+Atlantis doesn't just support linear workspaces but you can configure within the atlantis.yaml file to accept multiple workspaces
+
+Within the atlantis.yaml file will look something like this:
+```
+version: 3
+automerge: true
+abort_on_execution_order_fail: true
+autodiscover:
+  mode: auto
+projects:
+- name: atlantis-dev
+  branch: /main/
+  dir: ./terraform
+  workspace: dev
+  terraform_version: v1.6.1
+  autoplan:
+    enabled: false
+- name: atlantis-prod
+  branch: /main/
+  dir: ./terraform
+  workspace: prod
+  terraform_version: v1.6.1
+  autoplan:
+    enabled: false
+```
+
+The config above defines 2 projects, atlantis-dev and atlantis-prod. This simulates the Dev environment and Prod environment.
+To tell Atlantis which workspace you want to use, you can use the -w flag during the atlantis plan or if you have defined a project within the atlantis.yaml, you can use the -p flag instead and it will pick up the configuration defined within the yaml file.
+```
+atlantis plan -w dev
+```
+![Atlantis plan with 2 different workspace](/image/10_atlantis.png)
