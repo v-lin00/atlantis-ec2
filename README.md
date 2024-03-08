@@ -97,8 +97,8 @@ vi /home/atlantis/.aws/credentials
 Press I within the Vim editor to go into input mode and paste in the block below:
 ```
 [default]
-aws_access_key_id = "AKIA2UT47QJP5U7MGRM4"
-aws_secret_access_key = "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"
+aws_access_key_id = "ACCESS_KEY"
+aws_secret_access_key = "SECRET_ACCESS_KEY"
 ```
 
 Once that is done, we press ESC to exit the input mode and press :wq to save the changes (w for write and q for quit)
