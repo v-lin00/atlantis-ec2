@@ -104,3 +104,20 @@ aws_secret_access_key = "SECRET_ACCESS_KEY"
 Once that is done, we press ESC to exit the input mode and press :wq to save the changes (w for write and q for quit)
 
 ![Adding AWS Creds for Atlantis](/image/4_atlantis.png)
+
+## Testing Atlantis
+
+Everything should be fully set up and ready to output your terraform plan onto pull request for everyone who has access to your repo to see. Lets try and upload a testing Terraform infrastructure and have Atlantis output our plan.
+
+![Creating a new repo within Gitlab](/image/5_atlantis.png)
+
+![Create merge request to testing atlantis](/image/6_atlantis.png)
+
+To run Terraform plan, we need to submit atlantis plan in the comment. We know it is working by the Eyes emote reacted on our atlantis plan comment. You can change the emote which is used by atlantis within configuration file.
+![Shows atlantis plan working within pull request](/image/7_atlantis.png)
+
+From atlantis homepage, you can see all the previous plans/apply with an screenshot attached showing the native terraform output
+![Atlantis homepage shows output](/image/8_atlantis.png)
+
+Once the plan is done and without error, the output will be commented within the pull request/merge request
+![Output of Atlantis plan](/image/9_atlantis.png)
