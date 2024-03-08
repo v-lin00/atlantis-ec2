@@ -23,8 +23,9 @@ Log into your GitLab instance with provided login details
 ```
 export ACCESS_TOKEN=YOUR_TOKEN
 
-To check if you have assigned the value correctly, run 'echo $ACCESS_TOKEN'. This should return the token you just generated
 ```
+To check if you have assigned the value correctly, run 'echo $ACCESS_TOKEN'. This should return the token you just generated
+
 ![Settings for access token](/image/4_gitlab.png)
 ![Take note of token secret](/image/4_1_gitlab.png)
 
@@ -41,9 +42,9 @@ export WEBHOOK_SECRET=YOUR_WEBHOOK_SECRET
         - Comments
         - Merge Request Events
     - Keep SSL enabled
-![Gitlab login page](/image/5_gitlab.png)
-![Gitlab login page](/image/5_1_gitlab.png)
-![Gitlab login page](/image/5_2_gitlab.png)
+![Gitlab Webhook settings](/image/5_gitlab.png)
+![Gitlab Webhook config part 1](/image/5_1_gitlab.png)
+![Gitlab Webhook config part 2](/image/5_2_gitlab.png)
 
 6. Set repo URL and hostname environment variables. 
 Make sure Repo URL DOES NOT contain http.
