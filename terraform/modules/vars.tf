@@ -23,7 +23,7 @@ variable "project" {
 # EC2 Vars
 ################################################################################
 variable "ami" {
-  description = "AMI used for Jenkins EC2"
+  description = "AMI used for Atlantis EC2"
   type        = string
   default     = "ami-062155e74028d4358"
 }
@@ -60,7 +60,7 @@ variable "amazonssm_role" {
 variable "tag_ec2" {
   description = "Name tag for EC2 instance"
   type = string
-  default = "alantis-ec2-github"
+  default = "atlantis-ec2-github"
   
 }
 
@@ -70,7 +70,7 @@ variable "tag_ec2" {
 variable "security_group_name" {
   description = "Name of the security group"
   type = string
-  default = "alantis-ec2-sg"
+  default = "atlantis-ec2-sg"
 }
 
 variable "security_group_description" {
